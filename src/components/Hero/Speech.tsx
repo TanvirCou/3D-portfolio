@@ -31,7 +31,7 @@ const Speech = () => {
       <div className="hidden items-end sm:flex">
         <Image
           src="/dp.jpeg"
-          alt=""
+          alt="dp"
           width={30}
           height={30}
           className="h-9 w-9 rounded-full object-cover"

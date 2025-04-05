@@ -18,7 +18,7 @@ const Test = () => {
           </Sphere>
           {/* <meshStandardMaterial color="red" /> */}
 
-          <ambientLight intensity={2} />
+          <ambientLight intensity={1} />
           <directionalLight position={[1, 2, 3]} />
           {/* <OrbitControls /> */}
         </mesh>
