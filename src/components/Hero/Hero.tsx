@@ -1,74 +1,132 @@
 import Image from 'next/image';
-import React from 'react'
-import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import React from 'react';
+import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import Speech from './Speech';
-import * as motion from "motion/react-client"
+import * as motion from 'motion/react-client';
 import ResumeButton from './ResumeButton';
 import Shape from './Shape';
 
 const variants = {
     introInitial: { opacity: 0, x: -100 },
-    introAnimate: { opacity: 1, x: 0, transition: { duration: 1, staggerChildren: 0.4 } },
-    scrollVisible: { y: 10, opacity: 0, transition: { duration: 2, repeat: Infinity } }
-}
+    introAnimate: {
+        opacity: 1,
+        x: 0,
+        transition: { duration: 1, staggerChildren: 0.4 },
+    },
+    scrollVisible: {
+        y: 10,
+        opacity: 0,
+        transition: { duration: 2, repeat: Infinity },
+    },
+};
 
 const socialVariants = {
     initial: { opacity: 0, y: -10 },
-    animate: { opacity: 1, y: 0, transition: { duration: 1, staggerChildren: 0.2 } }
-}
+    animate: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 1, staggerChildren: 0.2 },
+    },
+};
 
 const Hero = () => {
     const socialData = [
         {
-            id: "Linkedin",
+            id: 'Linkedin',
             Logo: FaLinkedin,
-            link: "https://www.linkedin.com/in/tnvr-kazi/",
+            link: 'https://www.linkedin.com/in/tnvr-kazi/',
         },
         {
-            id: "github",
+            id: 'github',
             Logo: FaGithub,
-            link: "https://github.com/TanvirCou",
+            link: 'https://github.com/TanvirCou',
         },
         {
-            id: "fb",
+            id: 'fb',
             Logo: FaFacebook,
-            link: "https://www.facebook.com/ahmed.tnvr.999",
+            link: 'https://www.facebook.com/ahmed.tnvr.999',
         },
         {
-            id: "instagram",
+            id: 'instagram',
             Logo: FaInstagram,
-            link: "https://www.instagram.com/tnvr_ahmed",
+            link: 'https://www.instagram.com/tnvr_ahmed',
         },
-    ]
+    ];
 
     return (
-        <div className='h-screen w-full flex items-center justify-center overflow-hidden'>
-            <div className='w-[90%] lg:w-[80%] h-screen flex flex-col sm:flex-row'>
-                <div className='w-full sm:w-1/2 flex flex-col sm:justify-between pt-2 py-0 sm:pt-0 sm:py-4 md:py-6 text-center sm:text-start'>
-                    <motion.p initial={{ y: -100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1 }} className='text-2xl/[30Spx] sm:text-3xl/[40px] md:text-4xl/[45px] lg:text-5xl/[55px] font-semibold text-[pink]'>Hey There, <br /> <span className='text-white'>I'm Tanvir!</span></motion.p>
-                    <motion.div variants={variants} initial="introInitial" animate="introAnimate" className='flex flex-col gap-y-2'>
-                        <motion.p variants={variants} className='text-md md:text-lg font-medium font-[Poppins]'>Fronted Developer</motion.p>
-                        <motion.p variants={variants} className='text-[10px] md:text-xs '>Next.js | React.js <br /> Typescript | TailwindCSS</motion.p>
+        <div className="flex h-screen w-full items-center justify-center overflow-hidden">
+            <div className="flex h-screen w-[90%] flex-col sm:flex-row lg:w-[80%]">
+                <div className="flex w-full flex-col py-0 pt-2 text-center sm:w-1/2 sm:justify-between sm:py-4 sm:pt-0 sm:text-start md:py-6">
+                    <motion.p
+                        initial={{ y: -100, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 1 }}
+                        className="text-2xl/[30Spx] font-semibold text-[pink] sm:text-3xl/[40px] md:text-4xl/[45px] lg:text-5xl/[55px]"
+                    >
+                        Hey There, <br /> <span className="text-white">I&apos;m Tanvir!</span>
+                    </motion.p>
+                    <motion.div
+                        variants={variants}
+                        initial="introInitial"
+                        animate="introAnimate"
+                        className="flex flex-col gap-y-2"
+                    >
+                        <motion.p
+                            variants={variants}
+                            className="text-md font-[Poppins] font-medium md:text-lg"
+                        >
+                            Fronted Developer
+                        </motion.p>
+                        <motion.p variants={variants} className="text-[10px] md:text-xs">
+                            Next.js | React.js <br /> Typescript | TailwindCSS
+                        </motion.p>
                     </motion.div>
-                    <motion.a variants={variants} animate="scrollVisible" href='/#services' className="hidden sm:block cursor-pointer w-fit">
-                        <Image src='/scroll.png' alt="" width={40} height={40} />
+                    <motion.a
+                        variants={variants}
+                        animate="scrollVisible"
+                        href="/#services"
+                        className="hidden w-fit cursor-pointer sm:block"
+                    >
+                        <Image src="/scroll.png" alt="" width={40} height={40} />
                     </motion.a>
                 </div>
 
-                <div className='w-full sm:w-1/2 flex flex-col items-center gap-y-2 sm:gap-y-0 sm:items-end sm:justify-between mt-3 sm:mt-0'>
-                    <motion.div variants={socialVariants} initial="initial" animate="animate" className="flex flex-col max-sm:flex-row items-center gap-x-4 sm:gap-x-0 gap-y-0 sm:gap-y-2 md:gap-y-2.5 bg-[#2f204e] py-3 px-3 rounded-md sm:rounded-b-md">
-                        {socialData.map(data => (
-                            <motion.a variants={socialVariants} type='button' href={data.link} target='_blank' rel="noreferrer" key={data.id} className='md:text-xl text-lg'>
+                <div className="mt-3 flex w-full flex-col items-center gap-y-2 sm:mt-0 sm:w-1/2 sm:items-end sm:justify-between sm:gap-y-0">
+                    <motion.div
+                        variants={socialVariants}
+                        initial="initial"
+                        animate="animate"
+                        className="flex flex-col items-center gap-x-4 gap-y-0 rounded-md bg-[#2f204e] px-3 py-3 max-sm:flex-row sm:gap-x-0 sm:gap-y-2 sm:rounded-b-md md:gap-y-2.5"
+                    >
+                        {socialData.map((data) => (
+                            <motion.a
+                                variants={socialVariants}
+                                type="button"
+                                href={data.link}
+                                target="_blank"
+                                rel="noreferrer"
+                                key={data.id}
+                                className="text-lg md:text-xl"
+                            >
                                 <data.Logo color="white" />
                             </motion.a>
                         ))}
                     </motion.div>
-                    <div className='w-full'>
+                    <div className="w-full">
                         <Speech />
                     </div>
                     <ResumeButton />
-                    <motion.a animate={{ x: [200, 0], opacity: [0, 1] }} transition={{ duration: 2 }} href='/#contact' className='hidden sm:block'>
-                        <motion.div animate={{ rotate: [0, 360] }} transition={{ duration: 10, repeat: Infinity, ease: "linear" }} className='relative md:mb-4 cursor-pointer'>
+                    <motion.a
+                        animate={{ x: [200, 0], opacity: [0, 1] }}
+                        transition={{ duration: 2 }}
+                        href="/#contact"
+                        className="hidden sm:block"
+                    >
+                        <motion.div
+                            animate={{ rotate: [0, 360] }}
+                            transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
+                            className="relative cursor-pointer md:mb-4"
+                        >
                             <svg viewBox="0 0 200 200" width="100" height="100">
                                 <circle cx="100" cy="100" r="90" fill="pink" />
                                 <path
@@ -85,7 +143,7 @@ const Hero = () => {
                                     </textPath>
                                 </text>
                             </svg>
-                            <div className='absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center w-20 h-20 m-auto'>
+                            <div className="absolute bottom-0 left-0 right-0 top-0 m-auto flex h-20 w-20 items-center justify-center">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24"
@@ -102,19 +160,27 @@ const Hero = () => {
                         </motion.div>
                     </motion.a>
                 </div>
-
             </div>
 
-            <div className='absolute h-full w-full top-0 left-0 -z-10 flex justify-center'>
-                <div className='w-full mr-0 sm:mr-12 mt-44 sm:mt-0'>
+            <div className="absolute left-0 top-0 -z-10 flex h-full w-full justify-center">
+                <div className="mr-0 mt-44 w-full sm:mr-12 sm:mt-0">
                     <Shape />
                 </div>
-                <div className='absolute bottom-0 right-0 sm:right-16 left-0 m-auto h-[320px] w-[200px] sm:h-[350px] sm:w-[200px] md:h-[380px] md:w-[220px] lg:h-[420px] lg:w-[250px] '>
-                    <Image src="/tnvr1.png" alt='' fill />
+                <div className="absolute bottom-0 left-0 right-0 m-auto h-[320px] w-[200px] sm:right-16 sm:h-[350px] sm:w-[200px] md:h-[380px] md:w-[220px] lg:h-[420px] lg:w-[250px]">
+                    <Image src="/tnvr1.png" alt="" fill />
                 </div>
-                <div className='absolute bottom-0 right-6'>
-                    <motion.a animate={{ x: [200, 0], opacity: [0, 1] }} transition={{ duration: 2 }} href='/#contact' className='block sm:hidden'>
-                        <motion.div animate={{ rotate: [0, 360] }} transition={{ duration: 10, repeat: Infinity, ease: "linear" }} className='relative md:mb-4 cursor-pointer'>
+                <div className="absolute bottom-0 right-6">
+                    <motion.a
+                        animate={{ x: [200, 0], opacity: [0, 1] }}
+                        transition={{ duration: 2 }}
+                        href="/#contact"
+                        className="block sm:hidden"
+                    >
+                        <motion.div
+                            animate={{ rotate: [0, 360] }}
+                            transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
+                            className="relative cursor-pointer md:mb-4"
+                        >
                             <svg viewBox="0 0 200 200" width="80" height="80">
                                 <circle cx="100" cy="100" r="90" fill="pink" />
                                 <path
@@ -131,7 +197,7 @@ const Hero = () => {
                                     </textPath>
                                 </text>
                             </svg>
-                            <div className='absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center w-20 h-20 m-auto'>
+                            <div className="absolute bottom-0 left-0 right-0 top-0 m-auto flex h-20 w-20 items-center justify-center">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24"
@@ -149,10 +215,8 @@ const Hero = () => {
                     </motion.a>
                 </div>
             </div>
-
-
         </div>
-    )
-}
+    );
+};
 
-export default Hero
+export default Hero;
