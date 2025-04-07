@@ -14,9 +14,7 @@ export default function Home() {
         <Services />
       </section>
 
-      <section className="h-screen snap-center" id="portfolio">
-        <Portfolio />
-      </section>
+      <Portfolio />
 
       <section className="h-screen snap-center" id="contact">
         <Contact />

@@ -13,3 +13,15 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 }
+
+.service:nth-child(1) .serviceIcon {
+  background-color: #dd4c62;
+}
+
+.service:nth-child(2) .serviceIcon {
+  background-color: #025656;
+}
+
+.service:nth-child(3) .serviceIcon {
+  background-color: #6c5c0c;
+}

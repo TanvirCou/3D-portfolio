@@ -34,6 +34,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "commitlint.config.ts",
+    "src/components/Services/Computer/Computer.jsx",
   ],
   "exclude": [
     "node_modules"
