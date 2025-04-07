@@ -6,17 +6,17 @@ import Services from '@/components/Services/Services';
 export default function Home() {
   return (
     <div>
-      <section className="h-screen snap-center" id="hero">
+      <section className="h-screen snap-start" id="hero">
         <Hero />
       </section>
 
-      <section className="h-screen snap-center" id="services">
+      <section className="h-screen snap-start" id="services">
         <Services />
       </section>
 
       <Portfolio />
 
-      <section className="h-screen snap-center" id="contact">
+      <section className="h-screen snap-start" id="contact">
         <Contact />
       </section>
     </div>

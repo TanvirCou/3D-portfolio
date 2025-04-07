@@ -36,7 +36,7 @@ const SingleWork = ({ data }: DataProps) => {
   const y = useTransform(scrollYProgress, [0, 1], [-200, 200]);
 
   return (
-    <div className="flex h-screen w-full snap-center items-center justify-center">
+    <div className="flex h-screen w-full snap-start items-center justify-center">
       <div className="flex w-[90%] items-center justify-center gap-y-10 max-md:flex-col sm:w-[70%] md:w-[90%] md:gap-x-8 xl:w-[80%]">
         <div className="w-full md:w-[55%]">
           <div className="relative h-[30vh] w-full md:h-[50vh]" ref={ref}>

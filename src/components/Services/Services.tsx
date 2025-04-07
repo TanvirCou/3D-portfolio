@@ -41,9 +41,9 @@ const listVariants = {
 
 const Services = () => {
   return (
-    <div className="flex h-screen w-full items-center justify-center overflow-hidden">
-      <div className="flex h-screen w-[90%] items-center md:w-[80%]">
-        <div className="flex w-full flex-col justify-center gap-2 sm:w-1/2">
+    <div className="flex h-full w-full items-center justify-center overflow-hidden">
+      <div className="flex h-full w-[90%] flex-col items-center justify-center sm:flex-row md:w-[80%]">
+        <div className="flex h-[40vh] w-full flex-col justify-center gap-2 sm:h-full sm:w-1/2">
           <motion.p
             variants={textVariants}
             initial="initial"
@@ -62,7 +62,7 @@ const Services = () => {
               <motion.div
                 variants={listVariants}
                 key={service.id}
-                className="service flex items-center gap-2 rounded-md bg-[#2f213f] p-3 sm:w-[70%] md:w-[60%] lg:w-[50%]"
+                className="service flex items-center gap-2 rounded-md bg-[#2f213f] p-3 sm:w-[80%] md:w-[70%] lg:w-[50%]"
               >
                 <div className="serviceIcon rounded-full p-1.5">
                   <Image src={service.img} alt="" width={18} height={16} />
@@ -79,7 +79,7 @@ const Services = () => {
           </div>
         </div>
 
-        <div className="hidden h-screen w-1/2 items-center justify-center sm:flex">
+        <div className="h-[40vh] w-full items-center justify-center sm:flex sm:h-full sm:w-1/2">
           <ComputerContainer />
         </div>
       </div>

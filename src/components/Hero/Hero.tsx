@@ -54,14 +54,14 @@ const Hero = () => {
   ];
 
   return (
-    <div className="flex h-screen w-full items-center justify-center overflow-hidden">
-      <div className="flex h-screen w-[90%] flex-col sm:flex-row lg:w-[80%]">
-        <div className="flex w-full flex-col py-0 pt-2 text-center sm:w-1/2 sm:justify-between sm:py-4 sm:pt-0 sm:text-start md:py-6">
+    <div className="flex h-full w-full items-center justify-center overflow-hidden">
+      <div className="flex h-full w-[90%] flex-col sm:flex-row lg:w-[80%]">
+        <div className="flex w-full flex-col py-0 pt-6 text-center sm:w-1/2 sm:justify-between sm:py-4 sm:pt-0 sm:text-start md:py-6">
           <motion.p
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1 }}
-            className="text-2xl/[30Spx] font-semibold text-[pink] sm:text-3xl/[40px] md:text-4xl/[45px] lg:text-5xl/[55px]"
+            className="text-3xl/[40px] font-semibold text-[pink] md:text-4xl/[45px] lg:text-5xl/[55px]"
           >
             Hey There, <br />{' '}
             <span className="text-white">I&apos;m Tanvir!</span>
@@ -164,13 +164,13 @@ const Hero = () => {
       </div>
 
       <div className="absolute left-0 top-0 -z-10 flex h-full w-full justify-center">
-        <div className="mr-0 mt-44 w-full sm:mr-12 sm:mt-0">
+        <div className="mr-0 mt-60 w-full sm:mr-12 sm:mt-52 md:mt-44 lg:mt-0">
           <Shape />
         </div>
-        <div className="absolute bottom-0 left-0 right-0 m-auto h-[320px] w-[200px] sm:right-16 sm:h-[350px] sm:w-[200px] md:h-[380px] md:w-[220px] lg:h-[420px] lg:w-[250px]">
+        <div className="absolute bottom-0 left-0 right-0 m-auto h-[400px] w-[230px] sm:right-16 sm:h-[400px] sm:w-[230px] md:h-[420px] md:w-[250px] lg:h-[420px] lg:w-[250px]">
           <Image src="/tnvr1.png" alt="" fill />
         </div>
-        <div className="absolute bottom-0 right-6">
+        <div className="absolute bottom-2 right-6 block sm:hidden">
           <motion.a
             animate={{ x: [200, 0], opacity: [0, 1] }}
             transition={{ duration: 2 }}
