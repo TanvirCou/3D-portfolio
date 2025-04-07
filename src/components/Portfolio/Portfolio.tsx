@@ -16,7 +16,7 @@ const Portfolio = () => {
 
   return (
     <div ref={ref} id="portfolio" className="relative">
-      <div className="sticky left-0 top-0 w-full pt-12 text-center text-[#dd4c62]">
+      <div className="sticky left-0 top-0 w-full pt-12 text-center font-[Poppins] text-[#dd4c62]">
         <p className="text-3xl font-semibold">Projects</p>
         <motion.div className="mx-3 mt-2 h-2 rounded-md bg-white"></motion.div>
         <motion.div

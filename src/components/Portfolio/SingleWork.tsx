@@ -44,7 +44,7 @@ const SingleWork = ({ data }: DataProps) => {
               fill
               src={data.img}
               alt=""
-              className="h-full w-full rounded object-fill"
+              className="-z-10 h-full w-full rounded object-fill"
             />
           </div>
         </div>
