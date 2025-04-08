@@ -42,8 +42,8 @@ const listVariants = {
 const Services = () => {
   return (
     <div className="flex h-full w-full items-center justify-center overflow-hidden">
-      <div className="flex h-full w-[90%] flex-col items-center justify-center sm:flex-row md:w-[80%]">
-        <div className="flex h-[40vh] w-full flex-col justify-center gap-2 sm:h-full sm:w-1/2">
+      <div className="flex h-full w-[90%] items-center justify-center md:w-[80%]">
+        <div className="flex h-full w-full flex-col justify-center gap-2 sm:w-1/2">
           <motion.p
             variants={textVariants}
             initial="initial"
@@ -79,7 +79,7 @@ const Services = () => {
           </div>
         </div>
 
-        <div className="h-[40vh] w-full items-center justify-center sm:flex sm:h-full sm:w-1/2">
+        <div className="hidden h-full w-full items-center justify-center sm:flex sm:w-1/2">
           <ComputerContainer />
         </div>
       </div>
