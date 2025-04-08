@@ -1,8 +1,8 @@
 'use client';
 import { useRef } from 'react';
-import { featuredData } from '../../Data/Data';
 import SingleWork from './SingleWork';
 import { useScroll, useSpring, motion } from 'motion/react';
+import { featuredData } from '@/Data/projects';
 
 const Portfolio = () => {
   const ref = useRef<HTMLDivElement | null>(null);

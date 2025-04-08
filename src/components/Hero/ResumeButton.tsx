@@ -20,7 +20,9 @@ const ResumeButton = () => {
   const boxShadow = useMotionTemplate`0px 4px 24px pink`;
   return (
     <motion.a
-      href="/#contact"
+      href="/Kazi_Tanvir_Ahmed.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
       style={{ border, boxShadow }}
       animate={{ opacity: [0, 1] }}
       whileHover={{ scale: 1.1 }}

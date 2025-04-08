@@ -3,12 +3,11 @@ import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera, Stage } from '@react-three/drei';
 import { Cube } from './Cube';
-import Loading from '@/components/Loading/Loading';
 
 const CubeContainer = () => {
   return (
     <Canvas>
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback="Loading...">
         <Stage environment="warehouse" intensity={0.5}>
           <Cube />
         </Stage>

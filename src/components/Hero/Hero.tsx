@@ -5,6 +5,7 @@ import Speech from './Speech';
 import * as motion from 'motion/react-client';
 import ResumeButton from './ResumeButton';
 import Shape from './Shape';
+import tnvr from '../../../public/tnvr1.png';
 
 const variants = {
   introInitial: { opacity: 0, x: -100 },
@@ -168,53 +169,53 @@ const Hero = () => {
           <Shape />
         </div>
         <div className="absolute bottom-0 left-0 right-0 m-auto h-[400px] w-[230px] sm:right-16 sm:h-[400px] sm:w-[230px] md:h-[420px] md:w-[250px] lg:h-[420px] lg:w-[250px]">
-          <Image src="/tnvr1.png" alt="" fill />
+          <Image src={tnvr} alt="" fill />
         </div>
-        <div className="absolute bottom-2 right-6 block sm:hidden">
-          <motion.a
-            animate={{ x: [200, 0], opacity: [0, 1] }}
-            transition={{ duration: 2 }}
-            href="/#contact"
-            className="block sm:hidden"
+      </div>
+
+      <div className="absolute bottom-2 right-6 block sm:hidden">
+        <motion.a
+          animate={{ x: [200, 0], opacity: [0, 1] }}
+          transition={{ duration: 2 }}
+          href="/#contact"
+        >
+          <motion.div
+            animate={{ rotate: [0, 360] }}
+            transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
+            className="relative cursor-pointer md:mb-4"
           >
-            <motion.div
-              animate={{ rotate: [0, 360] }}
-              transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
-              className="relative cursor-pointer md:mb-4"
-            >
-              <svg viewBox="0 0 200 200" width="80" height="80">
-                <circle cx="100" cy="100" r="90" fill="pink" />
-                <path
-                  id="innerCirclePath"
-                  fill="none"
-                  d="M 100,100 m -60,0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0"
-                />
-                <text className="text-lg tracking-wider">
-                  <textPath href="#innerCirclePath">Hire Now •</textPath>
-                </text>
-                <text className="text-lg tracking-wider">
-                  <textPath href="#innerCirclePath" startOffset="44%">
-                    Contact Me •
-                  </textPath>
-                </text>
+            <svg viewBox="0 0 200 200" width="80" height="80">
+              <circle cx="100" cy="100" r="90" fill="pink" />
+              <path
+                id="innerCirclePath"
+                fill="none"
+                d="M 100,100 m -60,0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0"
+              />
+              <text className="text-lg tracking-wider">
+                <textPath href="#innerCirclePath">Hire Now •</textPath>
+              </text>
+              <text className="text-lg tracking-wider">
+                <textPath href="#innerCirclePath" startOffset="44%">
+                  Contact Me •
+                </textPath>
+              </text>
+            </svg>
+            <div className="absolute bottom-0 left-0 right-0 top-0 m-auto flex h-20 w-20 items-center justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="50"
+                height="50"
+                fill="none"
+                stroke="black"
+                strokeWidth="2"
+              >
+                <line x1="6" y1="18" x2="18" y2="6" />
+                <polyline points="9 6 18 6 18 15" />
               </svg>
-              <div className="absolute bottom-0 left-0 right-0 top-0 m-auto flex h-20 w-20 items-center justify-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  width="50"
-                  height="50"
-                  fill="none"
-                  stroke="black"
-                  strokeWidth="2"
-                >
-                  <line x1="6" y1="18" x2="18" y2="6" />
-                  <polyline points="9 6 18 6 18 15" />
-                </svg>
-              </div>
-            </motion.div>
-          </motion.a>
-        </div>
+            </div>
+          </motion.div>
+        </motion.a>
       </div>
     </div>
   );

@@ -6,27 +6,7 @@ import Counter from './Counter';
 import * as motion from 'motion/react-client';
 import CubeContainer from './Cube/CubeContainer';
 import BottleContainer from './Bottle/BottleContainer';
-
-const services = [
-  {
-    id: 1,
-    img: '/service1.png',
-    title: 'Full Stack Development',
-    counter: 6,
-  },
-  {
-    id: 2,
-    img: '/service2.png',
-    title: 'Fronted Development',
-    counter: 14,
-  },
-  {
-    id: 3,
-    img: '/service3.png',
-    title: 'Web Design',
-    counter: 7,
-  },
-];
+import { services } from '@/Data/services';
 
 const textVariants = {
   initial: { opacity: 0, y: -100, x: -100 },
@@ -67,7 +47,7 @@ const Services = () => {
               <motion.div
                 variants={listVariants}
                 key={service.id}
-                className="service flex items-center gap-2 rounded-md bg-[#2f213f] p-3 sm:w-[80%] md:w-[70%] lg:w-[50%]"
+                className="service flex cursor-pointer items-center gap-2 rounded-md bg-[#2f213f] p-3 sm:w-[80%] md:w-[70%] lg:w-[50%]"
                 onClick={() => setCurrentSurvice(service.id)}
               >
                 <div className="serviceIcon rounded-full p-1.5">
