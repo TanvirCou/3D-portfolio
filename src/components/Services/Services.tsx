@@ -1,27 +1,30 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import ComputerContainer from './Computer/ComputerContainer';
 import Image from 'next/image';
 import Counter from './Counter';
 import * as motion from 'motion/react-client';
+import CubeContainer from './Cube/CubeContainer';
+import BottleContainer from './Bottle/BottleContainer';
 
 const services = [
   {
     id: 1,
     img: '/service1.png',
     title: 'Full Stack Development',
-    counter: 35,
+    counter: 6,
   },
   {
     id: 2,
     img: '/service2.png',
     title: 'Fronted Development',
-    counter: 23,
+    counter: 14,
   },
   {
     id: 3,
     img: '/service3.png',
-    title: 'Portfolio',
-    counter: 46,
+    title: 'Web Design',
+    counter: 7,
   },
 ];
 
@@ -40,6 +43,8 @@ const listVariants = {
 };
 
 const Services = () => {
+  const [currentService, setCurrentSurvice] = useState(1);
+
   return (
     <div className="flex h-full w-full items-center justify-center overflow-hidden">
       <div className="flex h-full w-[90%] items-center justify-center md:w-[80%]">
@@ -63,6 +68,7 @@ const Services = () => {
                 variants={listVariants}
                 key={service.id}
                 className="service flex items-center gap-2 rounded-md bg-[#2f213f] p-3 sm:w-[80%] md:w-[70%] lg:w-[50%]"
+                onClick={() => setCurrentSurvice(service.id)}
               >
                 <div className="serviceIcon rounded-full p-1.5">
                   <Image src={service.img} alt="" width={18} height={16} />
@@ -75,12 +81,18 @@ const Services = () => {
             ))}
           </motion.div>
           <div>
-            <Counter from={0} to={24} text="Project Completed" />
+            <Counter from={0} to={27} text="Project Completed" />
           </div>
         </div>
 
         <div className="hidden h-full w-full items-center justify-center sm:flex sm:w-1/2">
-          <ComputerContainer />
+          {currentService === 1 ? (
+            <ComputerContainer />
+          ) : currentService === 2 ? (
+            <CubeContainer />
+          ) : (
+            <BottleContainer />
+          )}
         </div>
       </div>
     </div>

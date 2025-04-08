@@ -3,12 +3,13 @@ import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera, Stage } from '@react-three/drei';
 import { Bottle } from './Bottle';
+import Loading from '@/components/Loading/Loading';
 
 const BottleContainer = () => {
   return (
     <Canvas>
-      <Suspense fallback="Loading.....">
-        <Stage environment="night" intensity={0.5}>
+      <Suspense fallback={<Loading />}>
+        <Stage environment="apartment" intensity={0.5}>
           <Bottle />
         </Stage>
         <OrbitControls enableZoom={false} autoRotate />

@@ -3,11 +3,12 @@ import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera, Stage } from '@react-three/drei';
 import { Computer } from './Computer';
+import Loading from '@/components/Loading/Loading';
 
 const ComputerContainer = () => {
   return (
     <Canvas>
-      <Suspense fallback="Loading.....">
+      <Suspense fallback={<Loading />}>
         <Stage environment="night" intensity={0.5}>
           <Computer />
         </Stage>
